@@ -23,7 +23,7 @@
 #define vDeckCanNotPanViewTag    987654   // 不响应此侧滑的View的tag
 
 #import <UIKit/UIKit.h>
-#import "UIView_extra.h"
+#import "UIView+extra.h"
 
 @interface LeftSlideViewController : UIViewController
 

@@ -145,7 +145,7 @@
 		858DA2871BCF32D600346924 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858DA2861BCF32D600346924 /* iCarousel.m */; };
 		859A7F261BEDA117005BC318 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A7F251BEDA117005BC318 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		85C6F0D01BCA2E970024935C /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C6F0CF1BCA2E970024935C /* LeftSlideViewController.m */; };
-		85C6F0D31BCA2EB30024935C /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C6F0D21BCA2EB30024935C /* UIView_extra.m */; };
+		85C6F0D31BCA2EB30024935C /* UIView+extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C6F0D21BCA2EB30024935C /* UIView+extra.m */; };
 		85C6F0D71BCA30460024935C /* NewsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C6F0D61BCA30460024935C /* NewsPageViewController.m */; };
 		85C6F0E31BCA311A0024935C /* MorePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C6F0E21BCA311A0024935C /* MorePageViewController.m */; };
 		85C6F0E91BCA33240024935C /* BeginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C6F0E81BCA33240024935C /* BeginPageViewController.m */; };
@@ -439,8 +439,8 @@
 		859A7F251BEDA117005BC318 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		85C6F0CE1BCA2E970024935C /* LeftSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlideViewController.h; sourceTree = "<group>"; };
 		85C6F0CF1BCA2E970024935C /* LeftSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSlideViewController.m; sourceTree = "<group>"; };
-		85C6F0D11BCA2EB30024935C /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_extra.h; sourceTree = "<group>"; };
-		85C6F0D21BCA2EB30024935C /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_extra.m; sourceTree = "<group>"; };
+		85C6F0D11BCA2EB30024935C /* UIView+extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extra.h"; sourceTree = "<group>"; };
+		85C6F0D21BCA2EB30024935C /* UIView+extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extra.m"; sourceTree = "<group>"; };
 		85C6F0D51BCA30460024935C /* NewsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsPageViewController.h; sourceTree = "<group>"; };
 		85C6F0D61BCA30460024935C /* NewsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsPageViewController.m; sourceTree = "<group>"; };
 		85C6F0E11BCA311A0024935C /* MorePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePageViewController.h; sourceTree = "<group>"; };
@@ -1208,8 +1208,8 @@
 			children = (
 				85C6F0CE1BCA2E970024935C /* LeftSlideViewController.h */,
 				85C6F0CF1BCA2E970024935C /* LeftSlideViewController.m */,
-				85C6F0D11BCA2EB30024935C /* UIView_extra.h */,
-				85C6F0D21BCA2EB30024935C /* UIView_extra.m */,
+				85C6F0D11BCA2EB30024935C /* UIView+extra.h */,
+				85C6F0D21BCA2EB30024935C /* UIView+extra.m */,
 			);
 			name = LeftSlide;
 			sourceTree = "<group>";
@@ -1432,7 +1432,7 @@
 				854E0C0D1BFB19D700406ED8 /* OtherViewController.m in Sources */,
 				850ED8451BF3326B0059FC23 /* NSData+ImageContentType.m in Sources */,
 				850ED84E1BF3326B0059FC23 /* UIImage+GIF.m in Sources */,
-				85C6F0D31BCA2EB30024935C /* UIView_extra.m in Sources */,
+				85C6F0D31BCA2EB30024935C /* UIView+extra.m in Sources */,
 				855BB53B1BF4C1CA00CE6CD9 /* MorePageCollectionViewFlowLayout.m in Sources */,
 				85CA4A551BF88BE500F65A99 /* MASConstraintMaker.m in Sources */,
 				858DA2871BCF32D600346924 /* iCarousel.m in Sources */,

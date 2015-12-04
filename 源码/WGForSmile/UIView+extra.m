@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Missionsky. All rights reserved.
 //
 
-#import "UIView_extra.h"
+#import "UIView+extra.h"
 
-@implementation UIView (UIView)
+@implementation UIView (extra)
 
 @dynamic x;
 @dynamic y;
