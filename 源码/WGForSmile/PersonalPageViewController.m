@@ -130,6 +130,8 @@
         //正方形图片变圆形
         headimageview.layer.cornerRadius=headimageview.frame.size.width/2;
         headimageview.layer.masksToBounds=YES;
+        headimageview.layer.borderWidth=1;
+        headimageview.layer.borderColor=[UIColor redColor].CGColor;
         self.headimageview=headimageview;
         [headerview addSubview:headimageview];
         //头像旁边昵称
