@@ -9,13 +9,14 @@
 
 
 @interface LeftSlideViewController ()<UIGestureRecognizerDelegate>
-{
-    CGFloat _scalef;  //实时横向位移
-}
+//{
+//    CGFloat _scalef;  //实时横向位移
+//}
 
-@property (nonatomic,strong) UICollectionView *leftTableview;
-@property (nonatomic,assign) CGFloat leftTableviewW;//
-@property (nonatomic,strong) UIView *contentView;//
+@property (nonatomic, assign) CGFloat scalef;
+@property (nonatomic,strong) UIView *leftView;
+//@property (nonatomic,assign) CGFloat leftViewW;//
+@property (nonatomic,strong) UIView *coverView;//
 @end
 
 
@@ -60,20 +61,20 @@
         view.frame = self.leftVC.view.bounds;
         view.backgroundColor = [UIColor blackColor];
         view.alpha = 0.5;
-        self.contentView = view;
+        self.coverView = view;
         [self.leftVC.view addSubview:view];
         
         //获取左侧view （在viewcontroller中找view 遍历 通过判断类型找）
         for (UIView *obj in leftVC.view.subviews) {
-            if ([obj isKindOfClass:[UICollectionView class]]) {
-                self.leftTableview = (UICollectionView *)obj;
+            if (([obj isKindOfClass:[UICollectionView class]])||([obj isKindOfClass:[UITableView class]])) {
+                self.leftView = obj;
             }
         }
-        self.leftTableview.backgroundColor = [UIColor clearColor];
-        self.leftTableview.frame = CGRectMake(0, 0, kScreenWidth - kMainPageDistance, kScreenHeight);
+        self.leftView.backgroundColor = [UIColor clearColor];
+        self.leftView.frame = CGRectMake(0, 0, kScreenWidth - kMainPageDistance, kScreenHeight);
         //设置左侧view的初始位置和缩放系数
-        self.leftTableview.transform = CGAffineTransformMakeScale(kLeftScale, kLeftScale);
-        self.leftTableview.center = CGPointMake(kLeftCenterX, kScreenHeight * 0.5);//?
+        self.leftView.transform = CGAffineTransformMakeScale(kLeftScale, kLeftScale);
+        self.leftView.center = CGPointMake(kLeftCenterX, kScreenHeight * 0.5);//?
         
         [self.view addSubview:self.mainVC.view];
         self.closed = YES;//初始时侧滑窗关闭
@@ -141,12 +142,12 @@
         //leftScale kLeftScale~1.0
         CGFloat leftScale = kLeftScale + (1 - kLeftScale) * (rec.view.frame.origin.x / (kScreenWidth - kMainPageDistance));
         
-        self.leftTableview.center = CGPointMake(leftTabCenterX, kScreenHeight * 0.5);
-        self.leftTableview.transform = CGAffineTransformScale(CGAffineTransformIdentity, leftScale,leftScale);
+        self.leftView.center = CGPointMake(leftTabCenterX, kScreenHeight * 0.5);
+        self.leftView.transform = CGAffineTransformScale(CGAffineTransformIdentity, leftScale,leftScale);
         
         //tempAlpha kLeftAlpha~0
         CGFloat tempAlpha = kLeftAlpha - kLeftAlpha * (rec.view.frame.origin.x / (kScreenWidth - kMainPageDistance));
-        self.contentView.alpha = tempAlpha;
+        self.coverView.alpha = tempAlpha;
 
     }
     else
@@ -203,9 +204,9 @@
         tap.view.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2,[UIScreen mainScreen].bounds.size.height/2);
         self.closed = YES;
         
-        self.leftTableview.center = CGPointMake(kLeftCenterX, kScreenHeight * 0.5);
-        self.leftTableview.transform = CGAffineTransformScale(CGAffineTransformIdentity,kLeftScale,kLeftScale);
-        self.contentView.alpha = kLeftAlpha;
+        self.leftView.center = CGPointMake(kLeftCenterX, kScreenHeight * 0.5);
+        self.leftView.transform = CGAffineTransformScale(CGAffineTransformIdentity,kLeftScale,kLeftScale);
+        self.coverView.alpha = kLeftAlpha;
         
         [UIView commitAnimations];
         _scalef = 0;
@@ -225,9 +226,9 @@
     self.mainVC.view.center = CGPointMake(kScreenWidth / 2, kScreenHeight / 2);
     self.closed = YES;
     
-    self.leftTableview.center = CGPointMake(kLeftCenterX, kScreenHeight * 0.5);
-    self.leftTableview.transform = CGAffineTransformScale(CGAffineTransformIdentity,kLeftScale,kLeftScale);
-    self.contentView.alpha = kLeftAlpha;
+    self.leftView.center = CGPointMake(kLeftCenterX, kScreenHeight * 0.5);
+    self.leftView.transform = CGAffineTransformScale(CGAffineTransformIdentity,kLeftScale,kLeftScale);
+    self.coverView.alpha = kLeftAlpha;
     
     [UIView commitAnimations];
     [self removeSingleTap];
@@ -243,9 +244,9 @@
     self.mainVC.view.center = kMainPageCenter;
     self.closed = NO;
     
-    self.leftTableview.center = CGPointMake((kScreenWidth - kMainPageDistance) * 0.5, kScreenHeight * 0.5);
-    self.leftTableview.transform = CGAffineTransformScale(CGAffineTransformIdentity,1.0,1.0);
-    self.contentView.alpha = 0;
+    self.leftView.center = CGPointMake((kScreenWidth - kMainPageDistance) * 0.5, kScreenHeight * 0.5);
+    self.leftView.transform = CGAffineTransformScale(CGAffineTransformIdentity,1.0,1.0);
+    self.coverView.alpha = 0;
     
     [UIView commitAnimations];
     [self disableTapButton];

@@ -38,20 +38,20 @@
     }
     return _newestArray;
 }
-
--(id)init
+-(instancetype)init
 {
-    //if (self=[super init]) {
+    if (self=[super init]) {
         self.title=@"咨讯";
         self.page=0;
         self.tabBarItem.selectedImage=[UIImage imageNamed:@"tab_infomation_selected"];
         //    self.tabBarItem.selectedImage=[[UIImage imageNamed:@"tab_infomation_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.tabBarItem.image=[UIImage imageNamed:@"tab_infomation_normal"];
         //    self.tabBarController.tabBar.backgroundImage=nil;
-    //}
+    }
     //设置tabbar
-    return self;
+    return  self;
 }
+
 //- (void)viewWillAppear:(BOOL)animated
 //{
 //    [super viewWillAppear:animated];
@@ -108,7 +108,7 @@
     NSArray* names=@[@"最新",@"书籍",@"音乐",@"娱乐"];
     for (int i=0; i<4; i++) {
         UIButton *newsButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        newsButton.frame=CGRectMake(i*self.view.frame.size.width/4, 0,self.view.frame.size.width/4, 30);
+        newsButton.frame=CGRectMake(i*self.view.frame.size.width/4, 64,self.view.frame.size.width/4, 30);
         [newsButton setTitle:names[i] forState:UIControlStateNormal];
         [newsButton setBackgroundImage:[UIImage imageNamed:@"button_black_normal"] forState:UIControlStateNormal];
         [newsButton setBackgroundImage:[UIImage imageNamed:@"buttonSelected"] forState:UIControlStateSelected];
@@ -140,7 +140,7 @@
     //NSArray* colors=@[[UIColor whiteColor],[UIColor redColor],[UIColor yellowColor],[UIColor greenColor]];
     for (NSInteger i=0; i<4; i++) {
         UITableView* tableview=[[UITableView alloc]init];
-        tableview.frame=CGRectMake(self.view.bounds.size.width*i, 0, self.view.bounds.size.width, thisScreenHeight-44-40-50);
+        tableview.frame=CGRectMake(self.view.bounds.size.width*i, 64, self.view.bounds.size.width, thisScreenHeight-44-40-50);
         //tableview.backgroundColor=colors[i];
         tableview.tag=(i+11);
         tableview.delegate=self;

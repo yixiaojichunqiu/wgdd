@@ -50,8 +50,8 @@
     self.leftsilderVC=[[LeftSlideViewController alloc]initWithLeftView:self.personpagecollectionviewcontroller andMainView:beginpagetabbarviewcontroller];
     self.leftSliderNaviVC=[[UINavigationController alloc]initWithRootViewController:self.leftsilderVC];
     //美化导航和tabbar
-    [self customNavigationBar];
-    [self customTabbar];
+    //[self customNavigationBar];
+    //[self customTabbar];
     //判断是否第一次下载应用登录
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     BOOL notOnce=[defaults boolForKey:@"notOnce"];
